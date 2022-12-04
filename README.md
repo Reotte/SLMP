@@ -79,3 +79,8 @@ plc.ReadStruct<ExampleStruct>("D200");
 // or
 plc.ReadStruct<ExampleStruct>(Device.D, 200);
 ```
+
+## Funding
+If you like this project and/or it's in any way useful to you, and you'd like to buy me a coffee, you can do it so from the link below!  
+
+<a href="https://www.buymeacoffee.com/brkp" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-green.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a> 
