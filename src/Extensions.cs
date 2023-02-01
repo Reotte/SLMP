@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 
 namespace SLMP {
@@ -14,7 +15,7 @@ namespace SLMP {
             for (int i = 0; i < data.Length; i++) {
                 result[i] = Convert.ToInt32(data[i]);
             }
-            
+
             return result;
         }
 

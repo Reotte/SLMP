@@ -1,4 +1,6 @@
-﻿namespace SLMP {
+﻿using System;
+
+namespace SLMP {
     /// <summary>
     /// This exception is thrown in the case where `send` and `recv` data
     /// functions are called but there's no valid connection to operate on.

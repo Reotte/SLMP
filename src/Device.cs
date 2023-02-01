@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 
 namespace SLMP {
     /// <summary>
@@ -23,6 +24,7 @@ namespace SLMP {
         M = 0x90,
         B = 0xa0,
         SM = 0x91,
+        L = 0x92,
     }
 
     public class DeviceMethods {
@@ -55,6 +57,7 @@ namespace SLMP {
                 Device.M => DeviceType.Bit,
                 Device.B => DeviceType.Bit,
                 Device.SM => DeviceType.Bit,
+                Device.L => DeviceType.Bit,
 
                 _ => throw new ArgumentException("invalid device")
             };
@@ -78,6 +81,7 @@ namespace SLMP {
                 case "M": value = Device.M; break;
                 case "B": value = Device.B; break;
                 case "SM": value = Device.SM; break;
+                case "L": value = Device.L; break;
                 default:
                     value = null;
                     return false;

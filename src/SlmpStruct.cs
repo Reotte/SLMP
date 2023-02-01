@@ -1,4 +1,7 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 
 namespace SLMP {
     [AttributeUsage(AttributeTargets.Field, AllowMultiple = false)]
@@ -10,7 +13,7 @@ namespace SLMP {
         /// <summary>
         /// Number of the device words that the string occupies.
         /// </summary>
-        public int WordCount => Length % 2 == 0 ? Length / 2 + 1 : (Length + 1) / 2;
+        public int WordCount => Length % 2 == 0 ? (Length / 2) + 1 : (Length + 1) / 2;
     }
 
     /// <summary>
@@ -18,7 +21,7 @@ namespace SLMP {
     /// </summary>
     public static class SlmpStruct {
         /// <summary>
-        /// This function returns the size of the struct in terms of 
+        /// This function returns the size of the struct in terms of
         /// device words. (16 bit values)
         /// Int16, UInt16, Boolean size: 1 word (2 bytes)
         /// Int32, UInt32 size: 2 word (4 bytes)
@@ -27,7 +30,7 @@ namespace SLMP {
         /// <param name="structType">Type of the structure.</param>
         public static int GetStructSize(Type structType) {
             int size = 0;
-            var fieldTypes = structType.GetFields();
+            FieldInfo[] fieldTypes = structType.GetFields();
 
             foreach (var field in fieldTypes)
                 switch (field.FieldType.Name) {
